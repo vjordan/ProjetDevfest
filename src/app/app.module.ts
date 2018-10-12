@@ -10,6 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { SessionsPage } from '../pages/sessions/sessions';
 import { PresentateursPage } from '../pages/presentateurs/presentateurs';
 import { NotesPage } from '../pages/notes/notes';
+import { TelephonePage } from '../pages/telephone/telephone';
 
 
 @NgModule({
@@ -17,8 +18,9 @@ import { NotesPage } from '../pages/notes/notes';
     MyApp,
     HomePage,
     SessionsPage,
-    PresentateursPage,
-    NotesPage
+    //PresentateursPage,
+    //NotesPage,
+    TelephonePage
   ],
   imports: [
     BrowserModule,
@@ -36,8 +38,9 @@ import { NotesPage } from '../pages/notes/notes';
     MyApp,
     HomePage,
     SessionsPage,
-    PresentateursPage,
-    NotesPage
+    //PresentateursPage,
+    //NotesPage,
+    TelephonePage
   ]
 
 })

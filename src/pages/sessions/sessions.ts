@@ -14,10 +14,10 @@ export class SessionsPage {
   }
   private baseUrl = "https://devfest-nantes-2018-api.cleverapps.io/sessions";
 
-  sessions = Array.from(this.http.get(this.baseUrl)
+  /*sessions = Array.from(this.http.get(this.baseUrl)
     .subscribe(res => {
         console.log(res);
-      }));
+      }));*/
 
 
 
