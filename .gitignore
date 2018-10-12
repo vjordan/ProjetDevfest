@@ -34,7 +34,6 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 config.xml
-resources/
 package.json
 package-lock.json
 ionic.config.json
