@@ -19,7 +19,7 @@ import { TelephonePage } from '../pages/telephone/telephone';
     HomePage,
     SessionsPage,
     //PresentateursPage,
-    //NotesPage,
+    NotesPage,
     TelephonePage
   ],
   imports: [
@@ -39,7 +39,7 @@ import { TelephonePage } from '../pages/telephone/telephone';
     HomePage,
     SessionsPage,
     //PresentateursPage,
-    //NotesPage,
+    NotesPage,
     TelephonePage
   ]
 

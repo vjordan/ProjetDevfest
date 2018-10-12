@@ -12,7 +12,10 @@ import {Platform} from 'ionic-angular';
   providers: [ Device , Network ]
 })
 export class TelephonePage {
-
+  private model;
+  private platform;
+  private uuid;
+  private version;
   private connection = this.network.type;
 
   constructor(public navCtrl: NavController, private device: Device, private network: Network, private platform: Platform) {

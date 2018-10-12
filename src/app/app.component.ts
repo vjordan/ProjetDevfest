@@ -13,7 +13,7 @@ import { TelephonePage } from '../pages/telephone/telephone';
 })
 export class MyApp {
   //rootPage:any = HomePage;
-  rootPage:any = TelephonePage;
+  rootPage:any = NotesPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
