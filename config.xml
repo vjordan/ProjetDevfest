@@ -2,7 +2,7 @@
 <widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>DevFest Nantes 2018</name>
     <description>L'application permet de visualiser les données de la conférence DevFest Nantes et de prendre des notes</description>
-    <author>Juliette Fetay et Vincent Jordan</author>
+    <author>Juliette Fretay et Vincent Jordan</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
