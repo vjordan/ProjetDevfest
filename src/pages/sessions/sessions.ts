@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { SessionPage } from '../session/session';
 
 @Component({
   selector: 'page-sessions',
@@ -9,15 +10,23 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SessionsPage {
 
+  private baseUrl = "https://devfest-nantes-2018-api.cleverapps.io/sessions";
+  private sessions;
+
   constructor(public navCtrl: NavController, private http: HttpClient) {
 
   }
-  private baseUrl = "https://devfest-nantes-2018-api.cleverapps.io/sessions";
+    ngOnInit(): void {
+      this.http.get(this.baseUrl).subscribe(data => {
+                 this.sessions = Object.keys(data).map(i => data[i]);
+               });
+    }
 
-  /*sessions = Array.from(this.http.get(this.baseUrl)
-    .subscribe(res => {
-        console.log(res);
-      }));*/
+    openSessionPage() {
+        this.navCtrl.push(SessionPage);
+    }
+
+
 
 
 

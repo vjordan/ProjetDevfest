@@ -1,17 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <button ion-button menuToggle>
+    <ion-title>
+      Conférence
+    </ion-title>
+    <button ion-button menuToggle right>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>
-        Conférence
-      </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+
+<ion-content padding class="bg-style" >
   <a class="navbar-item">
-    <img src="assets/imgs/imt.png">
+    <img src="assets/imgs/devfest-astronaute.jpg">
   </a>
   <h1 align="center">
     Conférence DevFest
@@ -19,6 +20,8 @@
   <h6 align="center">
     18 et 19 octobre 2018
   </h6>
-  <a href="#" class="button">Voir les sessions</a>
-  <a href="#" class="button">Voir les présentateurs</a>
+  <div text-center>
+      <button ion-button round (click)="goToSessions()">Voir les sessions</button>
+      <button ion-button round (click)="goToPresentateurs()">Voir les présentateurs</button>
+  </div>
 </ion-content>
