@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-//import { SessionPage } from '../session/session';
+import { SessionPage } from '../session/session';
 
 @Component({
   selector: 'page-sessions',
@@ -22,13 +22,7 @@ export class SessionsPage {
                });
     }
 
-    openSessionPage() {
-        this.navCtrl.push(SessionPage);
+    openSessionPage(session: any) {
+        this.navCtrl.push(SessionPage,{session: session});
     }
-
-
-
-
-
-
 }

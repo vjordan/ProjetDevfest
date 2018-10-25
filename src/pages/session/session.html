@@ -7,17 +7,13 @@
 </ion-header>
 
 <ion-content padding>
-  <h1 class="sessionTitre"> Titre </h1>
-  <p class="sessionType"> Type Session </p>
-  <p class="sessionDescription"> Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description</p>
+  <h1 class="sessionTitre">{{session.title}}</h1>
+  <p class="sessionType">{{session.type}}</p>
+  <p class="sessionDescription">{{session.description}}</p>
   <ion-list>
-    <button ion-item>
-      <img width="50" height="50" src="../assets/imgs/devfest.jpg">
-      Presentateur 1
-    </button>
-    <button ion-item>
-      <img width="50" height="50" src="../assets/imgs/devfest.jpg">
-      Presentateur 2
+    <button ion-item *ngFor="let presentateur of presentateurs" (click)="openPresentateurPage(presentateur)">
+      <img width="30" height="30" [src]="'https://devfest.gdgnantes.com/'+ presentateur.photoUrl">
+      {{presentateur.name}}
     </button>
   </ion-list>
   <button ion-button round>Mes Notes</button>
