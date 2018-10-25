@@ -3,6 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { PresentateurPage } from '../presentateur/presentateur';
+import { NotesPage } from '../notes/notes';
+
 
 @Component({
   selector: 'page-session',
@@ -26,8 +28,13 @@ export class SessionPage {
     }
   }
 
+<<<<<<< HEAD
   openPresentateurPage(presentateur: any) {
     this.navCtrl.push(PresentateurPage,{presentateur: presentateur});
+=======
+  openNotesPage() {
+    this.navCtrl.push(NotesPage);
+>>>>>>> 4885cc8f869f60eed7c7b0d6d5379c13c3cb22b3
   }
 
 }
