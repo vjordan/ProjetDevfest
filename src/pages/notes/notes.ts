@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import {Camera, CameraOptions} from '@ionic-native/camera';
 import { ImagePicker } from '@ionic-native/image-picker';
 
@@ -10,10 +10,12 @@ import { ImagePicker } from '@ionic-native/image-picker';
 
 })
 export class NotesPage {
+
   base64Image:string;
+  sessionTitle: String;
 
-  constructor(public navCtrl: NavController, private camera: Camera, private imagePicker: ImagePicker) {
-
+  constructor(public navCtrl: NavController, private camera: Camera, private imagePicker: ImagePicker, public navParams: NavParams) {
+    this.sessionTitle = navParams.get('sessionTitle');
   }
 
   takePicture(){
