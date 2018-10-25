@@ -28,13 +28,8 @@ export class SessionPage {
     }
   }
 
-<<<<<<< HEAD
   openPresentateurPage(presentateur: any) {
     this.navCtrl.push(PresentateurPage,{presentateur: presentateur});
-=======
-  openNotesPage() {
-    this.navCtrl.push(NotesPage);
->>>>>>> 4885cc8f869f60eed7c7b0d6d5379c13c3cb22b3
   }
 
 }
