@@ -8,7 +8,7 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let presentateur of presentateurs">
+    <button ion-item   (click)="openPresentateurPage()" *ngFor="let presentateur of presentateurs">
       <img width="30" height="30" [src]="'https://devfest.gdgnantes.com/'+ presentateur.photoUrl">
 
       <ion-icon name="arrow-forward" item-end></ion-icon>

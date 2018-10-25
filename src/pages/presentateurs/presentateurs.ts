@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {  NavController } from 'ionic-angular';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { PresentateurPage } from '../presentateur/presentateur';
+
 
 @Component({
   selector: 'page-presentateurs',
@@ -19,6 +21,10 @@ export class PresentateursPage {
                this.presentateurs = Object.keys(data).map(i => data[i]);
              });
   }
+
+  openPresentateurPage() {
+          this.navCtrl.push(PresentateurPage);
+      }
 
 
 }

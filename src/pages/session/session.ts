@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { NotesPage } from '../notes/notes';
+
 
 @Component({
   selector: 'page-session',
@@ -17,6 +19,8 @@ export class SessionPage {
 
     }
 
-
+  openNotesPage() {
+    this.navCtrl.push(NotesPage);
+  }
 
 }
