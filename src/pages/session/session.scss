@@ -1,3 +1,14 @@
 page-session {
-
+  .sessionTitre {
+      font-size: 4rem;
+  }
+  .sessionType {
+      font-size: 2rem;
+  }
+  .button {
+          background-color: color($colors, secondary);
+          text-align: center;
+          text-decoration: none;
+          font-size: 1.5rem;
+  }
 }

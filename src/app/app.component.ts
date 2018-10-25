@@ -28,11 +28,23 @@ export class MyApp {
     this.nav.push(SessionsPage);
   }
 
+    openSessionPage() {
+      this.nav.push(SessionPage);
+    }
+
   openPresentateursPage() {
       this.nav.push(PresentateursPage);
   }
 
+    openPresentateurPage() {
+        this.nav.push(PresentateurPage);
+    }
+
   openTelephonePage() {
       this.nav.push(TelephonePage);
+  }
+
+  openNotesPage() {
+      this.nav.push(NotesPage);
   }
 }

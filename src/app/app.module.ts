@@ -4,6 +4,9 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from '@angular/common/http';
+import {Camera, CameraOptions} from '@ionic-native/camera';
+import { ImagePicker } from '@ionic-native/image-picker';
+
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -13,6 +16,8 @@ import { PresentateursPage } from '../pages/presentateurs/presentateurs';
 import { PresentateurPage } from '../pages/presentateur/presentateur';
 import { NotesPage } from '../pages/notes/notes';
 import { TelephonePage } from '../pages/telephone/telephone';
+import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts';
+
 
 @NgModule({
   declarations: [
@@ -22,8 +27,8 @@ import { TelephonePage } from '../pages/telephone/telephone';
     PresentateursPage,
     NotesPage,
     TelephonePage,
-    //SessionPage,
-    //PresentateurPage
+    SessionPage,
+    PresentateurPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,10 @@ import { TelephonePage } from '../pages/telephone/telephone';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    HttpClientModule
+    HttpClientModule,
+    Camera,
+    ImagePicker,
+    Contacts
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,8 +52,8 @@ import { TelephonePage } from '../pages/telephone/telephone';
     PresentateursPage,
     NotesPage,
     TelephonePage,
-    //SessionPage,
-    //PresentateurPage
+    SessionPage,
+    PresentateurPage
   ]
 
 })

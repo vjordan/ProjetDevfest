@@ -8,9 +8,10 @@
 
 <ion-content padding>
   <h1>Titre Session</h1>
-  <button ion-button icon-camera><ion-icon name="camera"></ion-icon></button>
-  <button ion-button icon-image><ion-icon name="image"></ion-icon></button>
-  <button ion-button save-button>Enregistrer</button>
+  <button ion-button icon-camera (click)="takePicture()"><ion-icon name="camera"></ion-icon></button>
+  <button ion-button icon-image (click)="getPictures()"><ion-icon name="image"></ion-icon></button>
+  <button ion-button save-button full>Enregistrer</button>
   <textarea rows="6" cols="40">Prenez des notes ici.</textarea>
-  <img src="assets/imgs/logo.png"  />
+  <img [src]="base64Image" *ngIf="base64Image" />
+  <img src="../assets/imgs/maxresdefault.jpg" *ngIf="!base64Image" />
 </ion-content>
