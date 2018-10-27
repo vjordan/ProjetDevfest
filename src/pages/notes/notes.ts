@@ -11,10 +11,10 @@ import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 })
 export class NotesPage {
   base64Image:string;
-  session:any;
+  session: any;
   notesSession:string;
 
-  constructor(public navCtrl: NavController, private camera: Camera, private picker: ImagePicker, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, private camera: Camera, private imagePicker: ImagePicker, public navParams: NavParams) {
     this.session = navParams.get('session');
   }
 
