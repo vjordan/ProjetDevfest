@@ -35,7 +35,7 @@ export class NotesPage {
     const options : ImagePickerOptions = {
         maximumImagesCount: 1
       };
-    this.picker.getPictures(options).then((results) => {
+    this.imagePicker.getPictures(options).then((results) => {
       console.log(results[0]);
       this.base64Image =results[0];
      }, (err) => { });
