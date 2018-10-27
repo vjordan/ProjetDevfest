@@ -32,8 +32,8 @@ export class SessionPage {
     this.navCtrl.push(PresentateurPage,{presentateur: presentateur});
   }
 
-  openNotesPage() {
-      this.navCtrl.push(NotesPage);
+  openNotesPage(session: any) {
+      this.navCtrl.push(NotesPage,{session: session});
     }
 
 }

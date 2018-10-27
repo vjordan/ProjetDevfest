@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import {Camera, CameraOptions} from '@ionic-native/camera';
-import { ImagePicker } from '@ionic-native/image-picker';
+import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 
 
 @Component({
@@ -11,9 +11,11 @@ import { ImagePicker } from '@ionic-native/image-picker';
 })
 export class NotesPage {
   base64Image:string;
+  session:any;
+  notesSession:string;
 
-  constructor(public navCtrl: NavController, private camera: Camera, private imagePicker: ImagePicker) {
-
+  constructor(public navCtrl: NavController, private camera: Camera, private picker: ImagePicker, public navParams: NavParams) {
+    this.session = navParams.get('session');
   }
 
   takePicture(){
@@ -30,13 +32,12 @@ export class NotesPage {
     }
 
   getPictures(){
-    this.imagePicker.getPictures({
-      maximumImagesCount: 1
-    }).then((results) => {
-       for (var i = 0; i < results.length; i++) {
-           console.log('Image URI: ' + results[i]);
-           this.base64Image =results[i];
-       }
+    const options : ImagePickerOptions = {
+        maximumImagesCount: 1
+      };
+    this.picker.getPictures(options).then((results) => {
+      console.log(results[0]);
+      this.base64Image =results[0];
      }, (err) => { });
   }
 }

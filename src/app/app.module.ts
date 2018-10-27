@@ -6,6 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from '@angular/common/http';
 import {Camera, CameraOptions} from '@ionic-native/camera';
 import { ImagePicker } from '@ionic-native/image-picker';
+import { Contacts, Contact, ContactName } from '@ionic-native/contacts';
+
 
 
 import { MyApp } from './app.component';
@@ -16,7 +18,6 @@ import { PresentateursPage } from '../pages/presentateurs/presentateurs';
 import { PresentateurPage } from '../pages/presentateur/presentateur';
 import { NotesPage } from '../pages/notes/notes';
 import { TelephonePage } from '../pages/telephone/telephone';
-import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/cont
     HttpClientModule,
     Camera,
     ImagePicker,
-    Contacts
+    Contacts,
+    Contact
   ],
   bootstrap: [IonicApp],
   entryComponents: [

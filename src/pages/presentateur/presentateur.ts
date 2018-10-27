@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {  NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts';
+import { Contacts, Contact, ContactName } from '@ionic-native/contacts';
 import { SessionPage } from '../session/session';
 
 
@@ -15,6 +15,7 @@ export class PresentateurPage {
   presentateur: any;
   sessions: any;
   private baseUrl = "https://devfest-nantes-2018-api.cleverapps.io/sessions";
+  contacts:any;
 
   constructor(public navCtrl: NavController, private http: HttpClient, private contacts: Contacts, public navParams: NavParams) {
     this.presentateur = navParams.get('presentateur');
@@ -31,9 +32,11 @@ export class PresentateurPage {
   }
 
   addContact() {
-      let contact: Contact = this.contacts.create();
-      contact.name = new ContactName(null, 'Smith', 'John');
-      contact.phoneNumbers = [new ContactField('mobile', '6471234567')];
+      console.log(this.contacts);
+      const contact: Contact = this.contacts.create();
+      console.log(contact);
+      const presentateurName = this.presentateur.name.split(' ');
+      contact.name = new ContactName(null, presentateurName[1], presentateurName[0]);
       contact.save().then(
         () => console.log('Contact saved!', contact),
         (error: any) => console.error('Error saving contact.', error)
