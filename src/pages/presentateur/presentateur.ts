@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Contacts, Contact, ContactName } from '@ionic-native/contacts';
 import { SessionPage } from '../session/session';
