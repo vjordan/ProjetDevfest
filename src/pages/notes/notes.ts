@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import {Camera} from '@ionic-native/camera';
 import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 import { Storage } from '@ionic/storage';
+import { AlertController } from 'ionic-angular';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class NotesPage {
   storageNotes:string = "devfest_session_notes_";
   storageImg:string = "devfest_session_img_";
 
-  constructor(public navCtrl: NavController, private camera: Camera, private imagePicker: ImagePicker, public navParams: NavParams,private storage: Storage) {
+  constructor(public navCtrl: NavController, private camera: Camera, private imagePicker: ImagePicker, public navParams: NavParams,private storage: Storage, private alertCtrl: AlertController) {
     this.session = navParams.get('session');
   }
 
@@ -66,5 +67,15 @@ export class NotesPage {
     console.log(this.notesSession);
     this.storage.set(this.storageNotes + this.session.id, this.notesSession);
     this.storage.set(this.storageImg + this.session.id, this.base64Image);
+    this.alerteEnregistrement();
+  }
+
+  alerteEnregistrement() {
+    let alert = this.alertCtrl.create({
+      title: 'Enregistrement effectué',
+      subTitle: 'Vos notes et photos ont été enregistrées',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 }
