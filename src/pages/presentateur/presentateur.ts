@@ -15,7 +15,6 @@ export class PresentateurPage {
   presentateur: any;
   sessions: any;
   private baseUrl = "https://devfest-nantes-2018-api.cleverapps.io/sessions";
-  contacts:any;
 
   constructor(public navCtrl: NavController, private http: HttpClient, private contacts: Contacts, public navParams: NavParams) {
     this.presentateur = navParams.get('presentateur');

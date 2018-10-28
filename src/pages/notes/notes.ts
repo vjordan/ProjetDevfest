@@ -18,17 +18,27 @@ export class NotesPage {
 
   constructor(public navCtrl: NavController, private camera: Camera, private imagePicker: ImagePicker, public navParams: NavParams,private storage: Storage) {
     this.session = navParams.get('session');
-     this.loadNotes();
   }
 
-  public loadNotes() {
-      this.storage.get(this.storageNotes+this.session.id).then((res) => {
-          if(res != null)this.notesSession = res;
-        }
-      ).catch((err) => {
-        console.log(err);
-      });
+  ngOnInit(): void {
+    this.storage.get(this.storageNotes+this.session.id).then((res) => {
+      if (res != null) {
+        this.notesSession = res;
+      }
     }
+    ).catch((err) => {
+      console.log(err);
+    });
+
+    this.storage.get(this.storageImg+this.session.id).then((res) => {
+      if (res != null) {
+        this.base64Image = res;
+      }
+    }
+    ).catch((err) => {
+      console.log(err);
+    });
+  }
 
   takePicture(){
       this.camera.getPicture({
@@ -48,12 +58,12 @@ export class NotesPage {
         maximumImagesCount: 1
       };
     this.imagePicker.getPictures(options).then((results) => {
-      console.log(results[0]);
       this.base64Image =results[0];
      }, (err) => { });
   }
 
   saveNotes(){
+    console.log(this.notesSession);
     this.storage.set(this.storageNotes + this.session.id, this.notesSession);
     this.storage.set(this.storageImg + this.session.id, this.base64Image);
   }
