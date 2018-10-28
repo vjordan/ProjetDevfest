@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {Camera, CameraOptions} from '@ionic-native/camera';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { Contacts, Contact, ContactName } from '@ionic-native/contacts';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 
@@ -34,7 +35,8 @@ import { TelephonePage } from '../pages/telephone/telephone';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    IonicStorageModule.forRoot()
   ],
   providers: [
     StatusBar,

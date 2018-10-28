@@ -12,8 +12,8 @@
     <button ion-button icon-camera (click)="takePicture()" class="bg-style"><ion-icon name="camera"></ion-icon></button>
     <button ion-button icon-image (click)="getPictures()" class="bg-style"><ion-icon name="image"></ion-icon></button>
   </div>
-  <textarea rows="6" cols="40" class="textArea" placeholder="Prenez des notes ici."></textarea>
+  <textarea rows="6" cols="40" class="textArea" placeholder="Prenez des notes ici.">{{notesSession}}</textarea>
   <img [src]="base64Image" *ngIf="base64Image" />
   <img src="../assets/imgs/maxresdefault.jpg" *ngIf="!base64Image" />
-  <button ion-button save-button full class="bg-style">Enregistrer</button>
+  <button ion-button save-button full (click)="saveNotes()" class="bg-style">Enregistrer</button>
 </ion-content>
