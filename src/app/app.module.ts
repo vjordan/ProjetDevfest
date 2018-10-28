@@ -8,6 +8,7 @@ import {Camera} from '@ionic-native/camera';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { Contacts } from '@ionic-native/contacts';
 import { IonicStorageModule } from '@ionic/storage';
+import { File } from '@ionic-native/file';
 
 
 
@@ -45,7 +46,8 @@ import { TelephonePage } from '../pages/telephone/telephone';
     HttpClientModule,
     Camera,
     ImagePicker,
-    Contacts
+    Contacts,
+    File
   ],
   bootstrap: [IonicApp],
   entryComponents: [

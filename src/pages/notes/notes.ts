@@ -4,6 +4,7 @@ import {Camera} from '@ionic-native/camera';
 import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 import { Storage } from '@ionic/storage';
 import { AlertController } from 'ionic-angular';
+import { File } from '@ionic-native/file';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class NotesPage {
   storageNotes:string = "devfest_session_notes_";
   storageImg:string = "devfest_session_img_";
 
-  constructor(public navCtrl: NavController, private camera: Camera, private imagePicker: ImagePicker, public navParams: NavParams,private storage: Storage, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, private camera: Camera, private imagePicker: ImagePicker, public navParams: NavParams,private storage: Storage, private file: File, private alertCtrl: AlertController) {
     this.session = navParams.get('session');
   }
 
@@ -47,8 +48,8 @@ export class NotesPage {
           targetWidth: 1000,
           targetHeight: 1000
       }).then((imageData) => {
-        // imageData is a base64 encoded string
-          this.base64Image = "data:image/jpeg;base64," + imageData;
+        this.base64Image =  "data:image/jpeg;base64," + imageData;
+
       }, (err) => {
           console.log(err);
       });
@@ -59,7 +60,11 @@ export class NotesPage {
         maximumImagesCount: 1
       };
     this.imagePicker.getPictures(options).then((results) => {
-      this.base64Image =results[0];
+        let filename = results[0].substring(results[0].lastIndexOf('/')+1);
+        let path =  results[0].substring(0,results[0].lastIndexOf('/')+1);
+        this.file.readAsDataURL(path, filename).then(res => {
+          this.base64Image = res;
+        });
      }, (err) => { });
   }
 

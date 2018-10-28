@@ -89,4 +89,5 @@
         <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="your usage message" />
     </plugin>
     <engine name="android" spec="7.1.1" />
+    <plugin name="cordova-plugin-file" spec="6.0.1" />
 </widget>
